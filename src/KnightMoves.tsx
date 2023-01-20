@@ -146,14 +146,7 @@ const KnightMoves: React.FC = () => {
             </tr>
           </tbody>
         </table>
-        <div>
-          Possible moves:
-          <ul>
-            {moves.map((move) => (
-              <li key={move}>{move}</li>
-            ))}
-          </ul>
-        </div>
+        <div></div>
       </div>
     </div>
   );
