@@ -29,7 +29,7 @@ table.board tr:nth-of-type(even) td:nth-of-type(even) {
 
 table.board tr:nth-of-type(even) td:nth-of-type(odd),
 table.board tr:nth-of-type(odd) td:nth-of-type(even) {
-  background-color: rgb(250, 58, 234);
+  background-color: rgb(128, 33, 192);
 }
 .board {
   table-layout: fixed;
