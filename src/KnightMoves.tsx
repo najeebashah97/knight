@@ -1,14 +1,16 @@
-import React, { useState } from "react";
 let moves: string[] = [];
 
+// Helper function to check if a move is within the chessboard
 function isValidMove(x: number, y: number): boolean {
   return x >= 0 && x < 8 && y >= 0 && y < 8;
 }
-
+// Function to get all possible moves for a Knight at a given position
 function getKnightMoves(x: number, y: number) {
+  // Possible moves for a Knight
   moves = [];
   const moveX = [2, 1, -1, -2, -2, -1, 1, 2];
   const moveY = [1, 2, 2, 1, -1, -2, -2, -1];
+  // Check all possible moves and add them to the moves array if they are valid
   for (let i = 0; i < 8; i++) {
     const newX = x + moveX[i];
     const newY = y + moveY[i];
@@ -16,7 +18,8 @@ function getKnightMoves(x: number, y: number) {
       moves.push(`${String.fromCharCode(newX + 97)}${newY + 1}`);
     }
   }
-    moves.map((move: string) =>
+
+  moves.map((move: string) =>
     document.getElementById(move)!.classList.add("possibleMoves")
   );
 }
@@ -33,12 +36,17 @@ const KnightMoves: React.FC = () => {
     selectedMoves.forEach(function (item) {
       item.classList.remove("possibleMoves");
     });
+
+    const position: string = move;
+    const x = position.charCodeAt(0) - 97;
+    const y = parseInt(position.slice(1)) - 1;
+    getKnightMoves(x, y);
+  };
   return (
     <div id="main">
       <div className="boardWrapper">
-        <div className="boardWrapper">
-          <table role="grid" className="board" id="chessBoard">
-           <tbody>
+        <table role="grid" className="board" id="chessBoard">
+          <tbody>
             <tr>
               <th id="rank_0">8</th>
               <td id="a8" onClick={() => handlePositionChange("a8")}></td>
@@ -138,23 +146,10 @@ const KnightMoves: React.FC = () => {
               <th id="file_6">g</th>
               <th id="file_7">h</th>
             </tr>
-             <tr>
-              <th></th>
-              <th id="file_0">a</th>
-              <th id="file_1">b</th>
-              <th id="file_2">c</th>
-              <th id="file_3">d</th>
-              <th id="file_4">e</th>
-              <th id="file_5">f</th>
-              <th id="file_6">g</th>
-              <th id="file_7">h</th>
-            </tr>
           </tbody>
-          </table>
-        </div>
+        </table>
       </div>
     </div>
   );
-}
-
+};
 export default KnightMoves;

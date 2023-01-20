@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./App.css";
 import KnightMoves from "./KnightMoves";
 
 function App() {
