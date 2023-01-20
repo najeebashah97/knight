@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function KnightMoves() {
+  const [position, setPosition] = useState("a1");
+  const [moves, setMoves] = useState<string[]>([]);
+
+  const handlePositionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPosition(e.target.value);
+  };
   return (
     <div>
       <div className="boardWrapper">
@@ -96,6 +102,8 @@ function KnightMoves() {
             </tr>
           </tbody>
         </table>
+        <input type="text" value={position} onChange={handlePositionChange} />
+        <button type="submit">Submit</button>
       </div>
     </div>
   );
