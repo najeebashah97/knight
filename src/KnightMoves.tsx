@@ -1,16 +1,14 @@
 let moves: string[] = [];
 
-// Helper function to check if a move is within the chessboard
 function isValidMove(x: number, y: number): boolean {
   return x >= 0 && x < 8 && y >= 0 && y < 8;
 }
-// Function to get all possible moves for a Knight at a given position
+
 function getKnightMoves(x: number, y: number) {
-  // Possible moves for a Knight
   moves = [];
   const moveX = [2, 1, -1, -2, -2, -1, 1, 2];
   const moveY = [1, 2, 2, 1, -1, -2, -2, -1];
-  // Check all possible moves and add them to the moves array if they are valid
+
   for (let i = 0; i < 8; i++) {
     const newX = x + moveX[i];
     const newY = y + moveY[i];
@@ -148,6 +146,14 @@ const KnightMoves: React.FC = () => {
             </tr>
           </tbody>
         </table>
+        <div>
+          Possible moves:
+          <ul>
+            {moves.map((move) => (
+              <li key={move}>{move}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

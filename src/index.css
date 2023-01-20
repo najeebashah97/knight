@@ -24,10 +24,40 @@ code {
 }
 table.board tr:nth-of-type(odd) td:nth-of-type(odd),
 table.board tr:nth-of-type(even) td:nth-of-type(even) {
-  background-color: rgb(235, 222, 42);
+  background-color: rgb(21, 45, 165);
 }
 
 table.board tr:nth-of-type(even) td:nth-of-type(odd),
 table.board tr:nth-of-type(odd) td:nth-of-type(even) {
-  background-color: rgb(58, 119, 250);
+  background-color: rgb(250, 58, 234);
+}
+.board {
+  table-layout: fixed;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+table.board tr td {
+  border: 2px solid rgb(248, 42, 42);
+}
+
+table tr td,
+th {
+  width: 70px;
+  height: 65px;
+}
+.possibleMoves {
+  background-color: rgb(255, 0, 0) !important;
+}
+
+.horseImg {
+  background-image: url(./images/horse.png);
+  width: 70px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
