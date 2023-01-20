@@ -16,6 +16,10 @@ function getKnightMoves(x: number, y: number) {
       moves.push(`${String.fromCharCode(newX + 97)}${newY + 1}`);
     }
   }
+    moves.map((move: string) =>
+    document.getElementById(move)!.classList.add("possibleMoves")
+  );
+}
 const KnightMoves: React.FC = () => {
   const handlePositionChange = (move: string) => {
     let prevHorseImg = document.querySelectorAll(".horseImg");
@@ -124,6 +128,17 @@ const KnightMoves: React.FC = () => {
               <td id="h1" onClick={() => handlePositionChange("h1")}></td>
             </tr>
             <tr>
+              <th></th>
+              <th id="file_0">a</th>
+              <th id="file_1">b</th>
+              <th id="file_2">c</th>
+              <th id="file_3">d</th>
+              <th id="file_4">e</th>
+              <th id="file_5">f</th>
+              <th id="file_6">g</th>
+              <th id="file_7">h</th>
+            </tr>
+             <tr>
               <th></th>
               <th id="file_0">a</th>
               <th id="file_1">b</th>
